@@ -1,3 +1,5 @@
+import 'dart:js';
+
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
@@ -21,18 +23,23 @@ class LoginPage extends StatelessWidget {
             AlertDialog(title: Text(title), content: Text(text)),
       );
 
-  Future<String> attemptLogIn(String username, String password) async {
+  Future<String> attemptLogIn(String username, String password,BuildContext context) async {
     var res = await http.post(
       "$SERVER_IP",
       headers: {
         "content-type": "application/json",
-        "accept": "*/*",
+        "accept": "",
       },
       body: jsonEncode({"username": username, "password": password}),
     );
-    if (res.statusCode == 200) return res.body;
-    return null;
-  }
+    if (res.statusCode == 200) {
+    
+Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => HomePage()));    }
+    
+
+    
+   }
+
 
   Future<int> attemptSignUp(String username, String password) async {
     var res = await http.post('$SERVER_IP/signup',
@@ -63,13 +70,13 @@ class LoginPage extends StatelessWidget {
                   onPressed: () async {
                     var username = _usernameController.text;
                     var password = _passwordController.text;
-                    var jwt = await attemptLogIn(username, password);
+                    var jwt = await attemptLogIn(username, password,context);
                     if (jwt != null) {
                       storage.write(key: "jwt", value: jwt);
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => HomePage.fromBase64(jwt)));
+                              builder: (context) => HomePage()));
                     } else {
                       displayDialog(context, "An Error Occurred",
                           "No account was found matching that username and password");
@@ -111,15 +118,12 @@ class LoginPage extends StatelessWidget {
 }
 
 class HomePage extends StatelessWidget {
-  HomePage(this.jwt, this.payload);
+  
 
-  factory HomePage.fromBase64(String jwt) => HomePage(
-      jwt,
-      json.decode(
-          ascii.decode(base64.decode(base64.normalize(jwt.split(".")[1])))));
+ 
 
-  final String jwt;
-  final Map<String, dynamic> payload;
+  // final String jwt;
+  // final Map<String, dynamic> payload;
 
   @override
   Widget build(BuildContext context) => Scaffold(
@@ -159,30 +163,34 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: FutureBuilder(
-          future: jwtOrEmpty,
-          builder: (context, snapshot) {
-            if (!snapshot.hasData) return CircularProgressIndicator();
-            if (snapshot.data != "") {
-              var str = snapshot.data;
-              var jwt = str.split(".");
+      home:
+      
+      
+      //  FutureBuilder(
+      //     future: jwtOrEmpty,
+      //     builder: (context, snapshot) {
+      //       if (!snapshot.hasData) return CircularProgressIndicator();
+      //       if (snapshot.data != "") {
+      //         var str = snapshot.data;
+      //         var jwt = str.split(".");
 
-              if (jwt.length != 3) {
-                return LoginPage();
-              } else {
-                var payload = json.decode(
-                    ascii.decode(base64.decode(base64.normalize(jwt[1]))));
-                if (DateTime.fromMillisecondsSinceEpoch(payload["exp"] * 1000)
-                    .isAfter(DateTime.now())) {
-                  return HomePage(str, payload);
-                } else {
-                  return LoginPage();
-                }
-              }
-            } else {
-              return LoginPage();
-            }
-          }),
+      //         if (jwt.length != 3) {
+      //           return LoginPage();
+      //         } else {
+      //           // var payload = json.decode(
+      //           //     ascii.decode(base64.decode(base64.normalize(jwt[1]))));
+      //           // if (DateTime.fromMillisecondsSinceEpoch(payload["exp"] * 1000)
+      //               // .isAfter(DateTime.now())) {
+      //             return 
+      //             // HomePage(str, payload);
+      //           // } else {
+      //             // return LoginPage();
+      //           }
+      //         }
+      //       // } else {
+      //         return LoginPage();
+      //       }
+      //     }),
     );
   }
 }
