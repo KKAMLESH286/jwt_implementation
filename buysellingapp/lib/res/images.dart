@@ -1,0 +1,64 @@
+class AppImages {
+  //in use
+  static const String BaseIconPath = "asset/";
+  static const String backgroundMobile = BaseIconPath + "Organe.png";
+  static const String footabll = BaseIconPath + "football.png";
+  static const String layerIntro = BaseIconPath + "Layer.png";
+  static const String facebook = BaseIconPath + "Facebook.png";
+  static const String google = BaseIconPath + "Google.png";
+  static const String plus = BaseIconPath + "Plus.png";
+  static const String user = BaseIconPath + "user.png";
+  static const String chats = BaseIconPath + "chats.png";
+  static const String chats_a = BaseIconPath + "chats_a.png";
+  static const String home = BaseIconPath + "home.png";
+  static const String listing = BaseIconPath + "listing.png";
+  static const String mic = BaseIconPath + "mic.png";
+  static const String menu = BaseIconPath + "Path 24.png";
+  static const String pin = BaseIconPath + "pin.png";
+  static const String profile = BaseIconPath + "profile.png";
+  static const String send = BaseIconPath + "send.png";
+  static const String smartphone = BaseIconPath + "send.png";
+  static const String equalizer = BaseIconPath + "equalizer.png";
+  static const String location = BaseIconPath + "location.png";
+  static const String shape = BaseIconPath + "Shape.png";
+  static const String order = BaseIconPath + "flower1.jpeg";
+  static const String share = BaseIconPath + "share.png";
+  static const String calendar = BaseIconPath + "calendar.png";
+  static const String circle = BaseIconPath + "circles.png";
+  static const String fb = BaseIconPath + "facebookone.svg";
+  static const String instagram = BaseIconPath + "instagram.svg";
+  static const String twitter = BaseIconPath + "twitter.svg";
+  static const String homes = BaseIconPath + "home.svg";
+  static const String shares = BaseIconPath + "share.svg";
+  static const String mail = BaseIconPath + "mail.svg";
+  static const String iphone = BaseIconPath + "iphone.svg";
+  static const String check = BaseIconPath + "check.svg";
+  static const String arrow = BaseIconPath + "arrow.svg";
+  static const String locations = BaseIconPath + "location.svg";
+  static const String footbal = BaseIconPath + "footbal.svg";
+  static const String football = BaseIconPath + "football.png";
+  static const String eye = BaseIconPath + "eye_close.svg";
+  static const String calendars = BaseIconPath + "calendarone.svg";
+  static const String heart = BaseIconPath + "heart (2).svg";
+  static const String sold = BaseIconPath + "sold.svg";
+  static const String uncheck = BaseIconPath + "tick.svg";
+  static const String checkkbox = BaseIconPath + "checkbox.png";
+  static const String checks = BaseIconPath + "check1.svg";
+  static const String notification = BaseIconPath + "notification.svg";
+  static const String attachment = BaseIconPath + "attachment.svg";
+  static const String wish = BaseIconPath + "wish.png";
+  static const String email = BaseIconPath + "email.svg";
+  static const String flower = BaseIconPath + "flower.jpeg";
+
+  static const String ic_back = BaseIconPath + "ic_back.svg";
+  static const String mobileApp = BaseIconPath + "mobileapp.png";
+  static const String ic_filter = BaseIconPath + "ic_filter.svg";
+  static const String ic_notification_bell =
+      BaseIconPath + "ic_notification_bell.svg";
+  static const String poor = BaseIconPath + "dissapointment.png";
+  static const String fair = BaseIconPath + "sad.png";
+  static const String good = BaseIconPath + "smile (1).png";
+  static const String New = BaseIconPath + "smile (2).png";
+  static const String like_new = BaseIconPath + "smile (3).png";
+  static const String close = BaseIconPath + "close_icon.svg";
+}

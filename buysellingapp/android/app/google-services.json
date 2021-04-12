@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "243801698740",
+    "project_id": "buying-selling-app",
+    "storage_bucket": "buying-selling-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:243801698740:android:ed4b3801b634152d0482e1",
+        "android_client_info": {
+          "package_name": "com.pbs.buyingSellingApp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "243801698740-38mr12935ldtjstsibv5aeruirmf83jr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDRWoGT1jJx4bvbjMXhQLAW23317crg5M8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "243801698740-38mr12935ldtjstsibv5aeruirmf83jr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
